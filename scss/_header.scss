@@ -17,9 +17,7 @@ header {
     }
 }
 
-.menu {
-    display: none;
-}
+
 
 .header-logo {
     font-size: 3.8rem;
@@ -30,13 +28,14 @@ header {
         letter-spacing: 0.22rem;
     }
 }
-nav {
-    width: 30.5%;
-    color: #707070;
-    font-family: "Roboto Mono for Powerline";
-    text-align: left;
+nav.sp-nav {
+    display: none;
     @include sp {
-        display: none;
+      display: block;
+      width: 30.5%;
+      color: #707070;
+      font-family: "Roboto Mono for Powerline";
+      text-align: left;
     }
     ul {
         display:flex;
@@ -50,6 +49,51 @@ nav {
         
     }
 }
+nav.pc-navmenu {
+  display: block;
+    width: 30.5%;
+    color: #707070;
+    font-family: "Roboto Mono for Powerline";
+    text-align: left;
+  @include sp {
+    display: none;
+  }
+  ul {
+    display:flex;
+    justify-content:space-between;
+    font-size: 1.8rem;
+    letter-spacing: 0.18rem;
+    li {
+        padding-left: 21px;
+    }
+    
+    
+}
+}
+
+
+//ハンバーガー＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝//
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.16);
+}
+.sp-nav {
+  position: fixed;
+  right: -320px; /* これで隠れる */
+  top: 0;
+  width: 300px; /* スマホに収まるくらい */
+  height: 100vh;
+  padding-top: 40px;
+  background-color: #fff;
+  transition: all .6s;
+  z-index: 200;
+  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+}
 
 .ham {
     display: none;
@@ -62,45 +106,34 @@ nav {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        z-index: 300;
         cursor: pointer;
-        span {
+        .ham-line {
             display: inline-block;
             width: 100%;
             height: 1px;
             background-color: #000000;
+            transition: all 0.6s;
         }
-        .span-short {
+        .ham-line-short {
             display: inline-block;
             height: 1px;
-            width: 50%;background-color: #000000;
-
+            width: 50%;
+            background-color: #000000;
+            transition: all 0.6s;
+        }
         }
     }
     
+  
 
-/////////////////////////////////////////////
-  
-  /*
-  .grobal-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    padding: 0 14px;
-  }
-  
-  .grobal-list a {
-    display: block;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    text-decoration: none;
-    color: #111;
-  }
-  .grobal-list a:hover {
+
+  .sp-nav-item a:hover {
     background-color: #eee;
   }
- 
-  .black-bg {//クリックされた時の黒背景
+
+//クリック時の黒背景
+  .black-bg {
     position: fixed;
     left: 0;
     top: 0;
@@ -113,46 +146,32 @@ nav {
     transition: all .6s;
     cursor: pointer;
   }
+
   /* 表示された時用のCSS */
-  /*
-  .nav-open .global-nav {
+  .sp-nav {
     right: 0;
   }
-  .nav-open .black-bg {
+  .black-bg {
     opacity: .8;
     visibility: visible;
   }
-  .line-1 {
+
+  .ham .line-1 { 
     transform: rotate(45deg);
     top: 20px;
   }
-  .line-2 {
+  .ham .line-2 {
     width: 0;
     left: 50%;
   }
-  .line-3 {
+  .ham .line-3 {
     transform: rotate(-45deg);
     top: 20px;
   }
-  */
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 .material-box {
     
     background-color: #fff;
@@ -194,7 +213,4 @@ nav {
 .sample1 li:hover a::after {
     transform: scaleX(1);
 }
-
-
-
-
+*/
