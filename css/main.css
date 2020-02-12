@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.wrap {
+  overflow: hidden;
+}
+
 /* 
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -176,11 +180,28 @@ nav.sp-nav {
 }
 @media screen and (max-width: 600px) {
   nav.sp-nav {
+    /*
     display: block;
     width: 30.5%;
     color: #707070;
     font-family: "Roboto Mono for Powerline";
     text-align: left;
+    */
+    position: fixed;
+    right: -320px;
+    /* これで隠れる */
+    top: 0;
+    width: 300px;
+    /* スマホに収まるくらい */
+    height: 100vh;
+    padding-top: 40px;
+    color: #707070;
+    background-color: #fff;
+    font-family: "Roboto Mono for Powerline";
+    transition: all .6s;
+    z-index: 200;
+    overflow-y: auto;
+    /* メニューが多くなったらスクロールできるように */
   }
 }
 nav.sp-nav ul {
@@ -215,30 +236,33 @@ nav.pc-navmenu ul li {
   padding-left: 21px;
 }
 
-.header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 40px;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+@media screen and (max-width: 600px) {
+  .header {
+    position: fixed;
+    right: 0;
+    top: 20px;
+    width: 10%;
+    height: 50px;
+    line-height: 50px;
+  }
 }
 
-.sp-nav {
-  position: fixed;
-  right: -320px;
-  /* これで隠れる */
-  top: 0;
-  width: 300px;
-  /* スマホに収まるくらい */
-  height: 100vh;
-  padding-top: 40px;
-  background-color: #fff;
-  transition: all .6s;
-  z-index: 200;
-  overflow-y: auto;
-  /* メニューが多くなったらスクロールできるように */
+@media screen and (max-width: 600px) {
+  .sp-nav {
+    position: fixed;
+    right: -320px;
+    /* これで隠れる */
+    top: 0;
+    width: 300px;
+    /* スマホに収まるくらい */
+    height: 100vh;
+    padding-top: 40px;
+    background-color: #fff;
+    transition: all .6s;
+    z-index: 200;
+    overflow-y: auto;
+    /* メニューが多くなったらスクロールできるように */
+  }
 }
 
 .ham {
@@ -249,7 +273,7 @@ nav.pc-navmenu ul li {
     position: absolute;
     right: 20px;
     width: 16px;
-    height: 14px;
+    height: 18px;
     padding: 4px 0;
     display: flex;
     flex-direction: column;
@@ -292,73 +316,30 @@ nav.pc-navmenu ul li {
 }
 
 /* 表示された時用のCSS */
-.sp-nav {
+.nav-open .sp-nav {
   right: 0;
 }
 
-.black-bg {
+.nav-open .black-bg {
   opacity: .8;
   visibility: visible;
 }
 
-.ham .line-1 {
+.nav-open .line-1 {
   transform: rotate(45deg);
   top: 20px;
 }
 
-.ham .line-2 {
+.nav-open .line-2 {
   width: 0;
   left: 50%;
 }
 
-.ham .line-3 {
+.nav-open .line-3 {
   transform: rotate(-45deg);
   top: 20px;
 }
 
-/*
-.material-box {
-    
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-}
-
-.sample1 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 800px;
-    margin: 0 auto;
-    padding: 2em;
-}
-.sample1 li {
-    list-style: none;
-    text-align: center;
-    height: 2.5em;
-    line-height: 2.5em;
-}
-.sample1 li a {
-    text-decoration: none;
-    color: gray;
-    display: inline-block;
-    line-height: 1em;
-}
-.sample1 li a::after {
-    transition: 0.5s;
-    content: '';
-    width: 100%;
-    height: 2px;
-    transform: scaleX(0);
-    background-color: black;
-    display: block;
-}
-.sample1 li:hover a {
-    color: black;
-}
-.sample1 li:hover a::after {
-    transform: scaleX(1);
-}
-*/
 #first-v {
   width: 100%;
   height: 800px;
