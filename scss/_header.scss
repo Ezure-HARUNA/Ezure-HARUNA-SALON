@@ -28,41 +28,8 @@ header {
         letter-spacing: 0.22rem;
     }
 }
-nav.sp-nav {   //メニューの実装
-    display: none;
-    @include sp {
-      /*
-      display: block;
-      width: 30.5%;
-      color: #707070;
-      font-family: "Roboto Mono for Powerline";
-      text-align: left;
-      */
-      position: fixed;
-      right: -320px; /* これで隠れる */
-      top: 0;
-      width: 300px; /* スマホに収まるくらい */
-      height: 100vh;
-      padding-top: 40px;
-      color: #707070;
-      background-color: #fff;
-      font-family: "Roboto Mono for Powerline";
-      transition: all .6s;
-      z-index: 200;
-      overflow-y: auto; /* メニューが多くなったらスクロールできるように */
-    }
-    ul {
-        display:flex;
-        justify-content:space-between;
-        font-size: 1.8rem;
-        letter-spacing: 0.18rem;
-        li {
-            padding-left: 21px;
-        }
-        
-        
-    }
-}
+
+
 
 //PC版の時の
 nav.pc-navmenu {
@@ -82,9 +49,7 @@ nav.pc-navmenu {
     li {
         padding-left: 21px;
     }
-    
-    
-}
+  }
 }
 
 
@@ -101,21 +66,58 @@ nav.pc-navmenu {
   }
   
 }
-.sp-nav {
-  @include sp {
+  nav.sp-nav {
+   @include sp {
+    
     position: fixed;
-    right: -320px; /* これで隠れる */
-    top: 0;
-    width: 300px; /* スマホに収まるくらい */
+    right: -320px;
+    top: 0; 
+    width: 300px; 
     height: 100vh;
     padding-top: 40px;
     background-color: #fff;
     transition: all .6s;
     z-index: 200;
-    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
-  }
-  
+    overflow-y: auto; 
+    .sp-nav-list {
+        @include sp {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+       
+        .sp-nav-item {
+          @include sp {
+            text-align: center;
+            padding: 0 14px;
+          }
+            
+        }
+        .sp-nav-item a {
+          @include sp {
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: #111;   
+          }
+             
+        }
+        .sp-nav-item a:hover {
+          @include sp {
+            background-color: #eee;
+          }
+           
+        }
+    }  //sp-nav-list
+  } //include
 }
+    
+  
+  
+  
+  
+// }
 
 .ham {
     display: none;
@@ -144,15 +146,14 @@ nav.pc-navmenu {
             background-color: #000000;
             transition: all 0.6s;
         }
-        }
-    }
+     }
+}
     
   
 
 
-  .sp-nav-item a:hover {
-    background-color: #eee;
-  }
+   
+    
 
 //クリック時の黒背景
   .black-bg {
@@ -171,7 +172,8 @@ nav.pc-navmenu {
 
   /* 表示された時用のCSS */
   .nav-open .sp-nav {
-    right: 0;
+      right: 0;
+   
   }
   .nav-open .black-bg {
     opacity: .8;
