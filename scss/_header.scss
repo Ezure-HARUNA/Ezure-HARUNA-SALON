@@ -67,6 +67,7 @@ nav.pc-navmenu {
   
 }
   nav.sp-nav {
+    display:none;
    @include sp {
     
     position: fixed;
