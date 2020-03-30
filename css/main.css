@@ -208,6 +208,9 @@ nav.pc-navmenu ul li {
   }
 }
 
+nav.sp-nav {
+  display: none;
+}
 @media screen and (max-width: 600px) {
   nav.sp-nav {
     position: fixed;
@@ -221,12 +224,20 @@ nav.pc-navmenu ul li {
     z-index: 200;
     overflow-y: auto;
   }
+  nav.sp-nav .sp-nav-list {
+    display: none;
+  }
 }
 @media screen and (max-width: 600px) and (max-width: 600px) {
   nav.sp-nav .sp-nav-list {
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav.sp-nav .sp-nav-list .sp-nav-item {
+    display: none;
   }
 }
 @media screen and (max-width: 600px) and (max-width: 600px) {
@@ -387,8 +398,10 @@ nav.pc-navmenu ul li {
     letter-spacing: 0.23rem;
     height: 19.5%;
     position: absolute;
-    top: 49.7%;
-    left: 23.7%;
+    top: -101.1%;
+    left: -22.7%;
+    color: white;
+    z-index: -1;
   }
 }
 .first-v-wrap .message-child-wrap .hair {
@@ -403,8 +416,10 @@ nav.pc-navmenu ul li {
     font-family: "Zapfino", cursive;
     height: 80.5%;
     position: absolute;
-    top: 33.8%;
-    left: 50%;
+    top: 9.8%;
+    left: -22.7%;
+    color: white;
+    z-index: -1;
   }
 }
 .first-v-wrap .first-v-picture-wrap {
@@ -527,6 +542,7 @@ nav.pc-navmenu ul li {
     top: 18.8%;
     left: 5.35%;
     transform: translate(0%, 0%);
+    z-index: 1;
   }
 }
 .concept-wrap .picture-wrap .picture-left {

@@ -67,6 +67,7 @@ nav.pc-navmenu {
   
 }
   nav.sp-nav {
+    display: none;
    @include sp {
     
     position: fixed;
@@ -80,6 +81,7 @@ nav.pc-navmenu {
     z-index: 200;
     overflow-y: auto; 
     .sp-nav-list {
+         display: none;
         @include sp {
           margin: 0;
           padding: 0;
@@ -87,6 +89,7 @@ nav.pc-navmenu {
         }
        
         .sp-nav-item {
+          display: none;
           @include sp {
             text-align: center;
             padding: 0 14px;
